@@ -8,7 +8,7 @@ Jenkins is a self-contained Java-based program, ready to run out-of-the-box, wit
    - With Internet Access
    - Security Group with Port `8080` open for internet
 2. Install Java 11 and set path
-   # yum install java-1.8*
+   - yum install java-1.8*
 
 
 
