@@ -3,11 +3,13 @@ Jenkins is a self-contained Java-based program, ready to run out-of-the-box, wit
 
 ### Follow this artical [On YouTube Channel](https://youtu.be/ERR7cqW28FY)
 
-### Prerequisites
-1. EC2 Instance 
+
+1. Launch Red-hat Linux EC2 Instance 
    - With Internet Access
    - Security Group with Port `8080` open for internet
-1. Java 11 should be installed  
+2. Install Java 11 and set path
+   # yum install java-1.8*
+
 
 
 ## Install Jenkins
