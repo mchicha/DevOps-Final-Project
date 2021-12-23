@@ -1,5 +1,4 @@
 # DevOps Project Phase 1 - Deploy on EC2 
-![project-phase-1](https://user-images.githubusercontent.com/12627210/147250718-715bc3ba-be3b-46e8-9d74-af99f68d3659.jpg)
 
 We know how to use work with each and Git, Jenkins independently. What if you want to collaborate these two? that is where Simple DevOps project helps you. Follow below steps if you are a new guy to DevOps. You love it. 
 
