@@ -4,8 +4,11 @@
 We know how to use work with each and Git, Jenkins independently. What if you want to collaborate these two? that is where Simple DevOps project helps you. Follow below steps if you are a new guy to DevOps. You love it. 
 
 ### Follow this article in **[YouTube](https://www.youtube.com/watch?v=Z9G5stlXoyg)**  
-#### Prerequisites
-1. EC2 instance with tomcat installation **[installation steps video](https://youtu.be/m21nFreFw8A)
+1. Launch Amazon Linux
+   - With internet access
+   - Security Group with Port '8080' open for internet
+![Security-group!](Images/jenkins-server-security-group.jpg)
+
 1. Jenkins server **[Get Help here](https://www.youtube.com/watch?v=M32O4Yv0ANc)
 
 ### Part-01 : Adding steps for Integration
