@@ -44,12 +44,7 @@ We know how to use work with each and Git, Jenkins independently. What if you wa
       ![jenkins-ready!](Images/jenkins-ready.jpg)
       ![welcome-jenkins!](Images/welcome-jenkins.jpg)
 
-
-
-
-
-
-1. Jenkins server **[Get Help here](https://www.youtube.com/watch?v=M32O4Yv0ANc)
+10. Jenkins server **[Get Help here](https://www.youtube.com/watch?v=M32O4Yv0ANc)
 
 ### Part-01 : Adding steps for Integration
 ### Steps to create Jenkin job
