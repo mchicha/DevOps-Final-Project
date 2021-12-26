@@ -60,12 +60,9 @@ We know how to use work with each and Git, Jenkins independently. What if you wa
       
       sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 
-      The Jenkins installation script directs you to the Customize Jenkins page. Click Install suggested plugins.
-      ![jenkins-customize!](Images/customize-jenkins.jpg)
-
-      Once the installation is complete, Create First Admin User, click Save and Continue.
+      - The Jenkins installation script directs you to the Customize Jenkins page. Click Install suggested plugins.
+      - Once the installation is complete, Create First Admin User, click Save and Continue.
       ![create-admin-user!](Images/create-admin-user.jpg)
-
       ![instance-config!](Images/instance-config.jpg)
 
       ![jenkins-ready!](Images/jenkins-ready.jpg)
