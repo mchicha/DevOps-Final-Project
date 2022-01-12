@@ -5,7 +5,7 @@ We know how to use work with each and Git, Jenkins independently. What if you wa
 
 ### Follow this article in **[YouTube](https://www.youtube.com/watch?v=Z9G5stlXoyg)**  
 # A. Create a Jenkins Server
-1. Launch Amazon Linux
+### 1. Launch Amazon Linux
    - With internet access
    - Security Group with Port '8080' open for internet
 ![Security-group!](Images/jenkins-server-security-group.jpg)
