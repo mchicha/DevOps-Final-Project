@@ -19,7 +19,6 @@ We know how to use work with each and Git, Jenkins independently. What if you wa
     sudo wget -O /etc/yum.repos.d/jenkins.repo \https://pkg.jenkins.io/redhat-stable/jenkins.repo
     
 ![download-jenkins-repo!](Images/download-jenkins-repo.jpg)
-
 ### 5. Import a key file from Jenkins-CI to enable installation from the package:
     sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
     - sudo yum upgrade
@@ -38,25 +37,24 @@ We know how to use work with each and Git, Jenkins independently. What if you wa
     Jenkins is now installed and running on your EC2 instance. To configure Jenkins:
       1. Connect to http://<your_server_public_DNS>:8080 from your browser. You will be able to access Jenkins through its management interface:
       
-      ![connect-public-ip!](Images/connect-public-ip+port-8080.jpg)
+![connect-public-ip!](Images/connect-public-ip+port-8080.jpg)
       It displays the below interface:
       
-      ![jenkins-interface!](Images/jenkins-interface.jpg)
+![jenkins-interface!](Images/jenkins-interface.jpg)
       - As prompted, enter the password found in /var/lib/jenkins/secrets/initialAdminPassword
       - Use the following command to display this password:
       - sudo cat /var/lib/jenkins/secrets/initialAdminPassword
       - The Jenkins installation script directs you to the Customize Jenkins page. Click Install suggested plugins.
       - Once the installation is complete, Create First Admin User, click Save and Continue.
       
-      ![create-admin-user!](Images/create-admin-user.jpg)
+![create-admin-user!](Images/create-admin-user.jpg)
       
-      ![instance-config!](Images/instance-config.jpg)
+![instance-config!](Images/instance-config.jpg)
       
-      ![jenkins-ready!](Images/jenkins-ready.jpg)
-      
-      ![welcome-jenkins!](Images/welcome-jenkins.jpg)
-
-10. Jenkins server **[Get Help here](https://www.youtube.com/watch?v=M32O4Yv0ANc)
+![jenkins-ready!](Images/jenkins-ready.jpg)
+    
+![welcome-jenkins!](Images/welcome-jenkins.jpg)
+### 10. Jenkins server **[Get Help here](https://www.youtube.com/watch?v=M32O4Yv0ANc)
 
 ### Part-01 : Adding steps for Integration
 ### Steps to create Jenkin job
