@@ -8,6 +8,7 @@ We know how to use work with each and Git, Jenkins independently. What if you wa
 ### 1. Launch Amazon Linux
    - With internet access
    - Security Group with Port '8080' open for internet
+
 ![Security-group!](Images/jenkins-server-security-group.jpg)
 ### 2. connect to the Amazon Linux ec2 machine via putty
 ![connect-to-linux-ec2!](Images/connect-to-linux-ec2-machine.jpg)
