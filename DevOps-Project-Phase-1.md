@@ -18,7 +18,8 @@ We know how to use work with each and Git, Jenkins independently. What if you wa
     - Add the Jenkins repo using the following command:
     sudo wget -O /etc/yum.repos.d/jenkins.repo \https://pkg.jenkins.io/redhat-stable/jenkins.repo
     
-    ![download-jenkins-repo!](Images/download-jenkins-repo.jpg)
+![download-jenkins-repo!](Images/download-jenkins-repo.jpg)
+
 ### 5. Import a key file from Jenkins-CI to enable installation from the package:
     sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
     - sudo yum upgrade
