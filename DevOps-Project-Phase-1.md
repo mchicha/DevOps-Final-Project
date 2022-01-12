@@ -19,10 +19,10 @@ We know how to use work with each and Git, Jenkins independently. What if you wa
     sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
     - sudo yum upgrade
 6. Install Jenkins using the following commands:
-    1. sudo amazon-linux-extras install epel -y
-    2. sudo yum update -y
-    3. sudo yum install jenkins java-1.8.0-openjdk-devel -y
-    4. sudo systemctl daemon-reload
+    - sudo amazon-linux-extras install epel -y
+    - sudo yum update -y
+    - sudo yum install jenkins java-1.8.0-openjdk-devel -y
+    - sudo systemctl daemon-reload
 7. Start Jenkins as a service:
       - sudo systemctl start jenkins
 8. You can check the status of the Jenkins service using the command: 
