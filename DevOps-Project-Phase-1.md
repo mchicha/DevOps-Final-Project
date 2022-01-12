@@ -33,7 +33,7 @@ We know how to use work with each and Git, Jenkins independently. What if you wa
 ### 8. You can check the status of the Jenkins service using the command: 
       - sudo systemctl status jenkins
       
-      ![check-jenkins-status!](Images/check-jenkins-status.jpg)
+![check-jenkins-status!](Images/check-jenkins-status.jpg)
 ### 9. Configure Jenkins
     Jenkins is now installed and running on your EC2 instance. To configure Jenkins:
       1. Connect to http://<your_server_public_DNS>:8080 from your browser. You will be able to access Jenkins through its management interface:
