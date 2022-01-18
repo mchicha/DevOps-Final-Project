@@ -210,7 +210,7 @@ yum install git -y
 10. Open tar file
 
     tar -zvxf apache-tomcat-10.0.14.tar.gz
-    
+
     ![open-tar-file!](Images/Phase1/open-tar-file.jpg)
 
 11. cd apache-tomcat-10.0.14
@@ -368,9 +368,15 @@ to the tomcat server
 
     scp <src_file> username@IP:<dest_path>
     
-    where IP is the IP of the tomcat server
+    where <src_file> is: 
     
-    and <dest_path> is /opt/apache-tomcat-10.0.14/webapps
+    webapp/target/webapp.war
+    
+    and IP is the IP of the tomcat server
+    
+    and <dest_path> is:
+    
+    /opt/apache-tomcat-10.0.14/webapps
 
     ![dest-path!](Images/Phase1/dest-path.jpg)
 
