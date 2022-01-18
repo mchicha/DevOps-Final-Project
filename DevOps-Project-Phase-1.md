@@ -210,6 +210,7 @@ yum install git -y
 10. Open tar file
 
     tar -zvxf apache-tomcat-10.0.14.tar.gz
+    
     ![open-tar-file!](Images/Phase1/open-tar-file.jpg)
 
 11. cd apache-tomcat-10.0.14
