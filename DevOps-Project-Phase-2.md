@@ -153,3 +153,13 @@
     - browse webapp: 13.57.41.156:8080/webapp
 
     ![browser-on-docker-server-webapp!](Images/Phase2/browser-on-docker-server-webapp.jpg)
+
+18. Change the index.jsp file
+    - Add the header: Well done, you are progressing well !!!
+    ![change-the-index-file!](Images/Phase2/change-the-index-file.jpg)
+
+
+19. Run again the job: Deploy-on-docker
+    - Browser on the docker-server
+
+    ![browser-on-docker-server-webapp-after-changes!](Images/Phase2/browser-on-docker-server-webapp-after-changes.jpg)
