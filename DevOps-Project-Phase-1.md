@@ -203,7 +203,7 @@ yum install git -y
 9. Download packages(find the packages to download by searching on google tomcat - download packages)
 
     Copy link address:
-    wget <https://dlcdn.apache.org/tomcat/tomcat-10/v10.0.14/bin/apache-tomcat-10.0.14.tar.gz>
+    wget https://dlcdn.apache.org/tomcat/tomcat-10/v10.0.16/bin/apache-tomcat-10.0.16.tar.gz
 
     ![download-tomcat-packages!](Images/Phase1/download-tomcat-packages.jpg)
 
@@ -231,9 +231,9 @@ yum install git -y
 
 15. Create link files for tomcat startup.sh and shutdown.sh
 
-    ln -s /opt/apache-tomcat-10.0.14/bin/startup.sh /usr/local/bin/tomcatup
+    ln -s /opt/apache-tomcat-10.0.16/bin/startup.sh /usr/local/bin/tomcatup
 
-    ln -s /opt/apache-tomcat-10.0.14/bin/shutdown.sh /usr/local/bin/tomcatdown
+    ln -s /opt/apache-tomcat-10.0.16/bin/shutdown.sh /usr/local/bin/tomcatdown
   
 16. Run tomcatup
 
@@ -372,19 +372,19 @@ to the tomcat server
     
     webapp/target/webapp.war
     
-    and IP is the IP of the tomcat server
+    and IP is the Public IP of the tomcat server
     
     and <dest_path> is:
     
-    /opt/apache-tomcat-10.0.14/webapps
+    /opt/apache-tomcat-10.0.16/webapps
 
     ![dest-path!](Images/Phase1/dest-path.jpg)
 
-    scp webapp/target/webapp.war ec2-user@54.215.70.238:/opt/apache-tomcat-10.0.14/webapps
+    scp webapp/target/webapp.war ec2-user@54.215.70.238:/opt/apache-tomcat-10.0.16/webapps
 
 12. Finally add the next command to the pipeline script:
 
-    sh "scp webapp/target/webapp.war ec2-user@54.215.70.238:/opt/apache-tomcat-10.0.14/webapps"
+    sh "scp webapp/target/webapp.war ec2-user@54.215.70.238:/opt/apache-tomcat-10.0.16/webapps"
 
     sh for shell command
 
@@ -392,7 +392,7 @@ to the tomcat server
 
     ![add-attribute-to-scp-command!](Images/Phase1/add-attribute-to-scp-command.jpg)
 
-    sh "scp -o StrictHostKeyChecking=no webapp/target/webapp.war ec2-user@54.215.70.238:/opt/apache-tomcat-10.0.14/webapps"
+    sh "scp -o StrictHostKeyChecking=no webapp/target/webapp.war ec2-user@54.215.70.238:/opt/apache-tomcat-10.0.16/webapps"
 
 14. Change the owner and group permissions of the /opt directory and sub-directories of the tomcat server to ec2-user
 
