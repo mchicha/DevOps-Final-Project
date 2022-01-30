@@ -444,5 +444,17 @@
         we use the command: ignored_errors with flag yes. to prevent the job to be unstable    
     ![create-ansible-docker-image-and-container-file-improved!](Images/Phase3/create-ansible-docker-image-and-container-file-improved.jpg)
 
-32. Run a new time the "deploy-on-docker-using-ansible" job, manually
+32. Change the index.jsp file
 
+        . Change the line: <h1 style="color: blue;"> Version: 1.1 </h1>
+    ![change-index-jsp-second!](Images/Phase3/change-index-jsp-second.jpg)
+
+33. Run a new time the "deploy-on-docker-using-ansible" job, manually
+
+    The job executed without getting UNSTABLE.
+    ![run-deploy-on-docker-using-ansible-job-third!](Images/Phase3/run-deploy-on-docker-using-ansible-job-third.jpg)
+
+34.  Browser on the ansible-server
+    ![browse-on-the-ansible-server-webapp-second!](Images/Phase3/browse-on-the-ansible-server-webapp-second.jpg)
+
+35. We will create a file to to deploy create and deploy the container on the docker-server using   Ansible
