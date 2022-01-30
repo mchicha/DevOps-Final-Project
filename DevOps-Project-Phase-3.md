@@ -400,3 +400,49 @@
 29. Browser on the ansible-server
 
     ![browse-on-the-ansible-server!](Images/Phase3/browse-on-the-ansible-server.jpg)
+
+    ![browse-on-the-ansible-server-webapp!](Images/Phase3/browse-on-the-ansible-server-webapp.jpg)
+
+30. Run a new time the "deploy-on-docker-using-ansible" job
+    
+    ![run-deploy-on-docker-using-ansible-job-bis!](Images/Phase3/run-deploy-on-docker-using-ansible-job-bis.jpg)
+
+        We got an error: 
+            . ERROR: Exception when publishing, exception message [Exec exit status not zero. Status [2]]
+            . Finished: UNSTABLE
+    Because we use the same image and the container.
+
+    We have to improve the ansible-docker-image.yml file
+
+31. Improve the ansible-docker-image.yml file
+
+        ---
+        - hosts: all
+        become: true
+
+        tasks:
+        - name: Stop container
+            command: docker stop name tomcat-server-ctr
+            ignore_errors: yes
+
+        - name: Remove container
+            command: docker rm tomcat-server-ctr
+            ignore_errors: yes
+
+        - name: Remove docker image
+            command: docker rmi tomcat-server-v8
+            ignore_errors: yes
+            
+        - name: building docker image using war file
+            command: docker build -t tomcat-server-v8 -f Dockerfile .
+            args:
+            chdir: /home/ansadmin
+
+        - name: building docker container out of image
+            command: docker run -d --name tomcat-server-ctr -p 8080:8080 tomcat-server-v8
+
+        we use the command: ignored_errors with flag yes. to prevent the job to be unstable    
+    ![create-ansible-docker-image-and-container-file-improved!](Images/Phase3/create-ansible-docker-image-and-container-file-improved.jpg)
+
+32. Run a new time the "deploy-on-docker-using-ansible" job, manually
+
