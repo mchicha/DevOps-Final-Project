@@ -392,4 +392,11 @@
 
         . Add the line: <h1 style="color: blue;"> Version: 1.0 </h1>
     ![change-index-jsp!](Images/Phase3/change-index-jsp.jpg)
+
+28. Run the "deploy-on-docker-using-ansible" job
     
+    ![run-deploy-on-docker-using-ansible-job!](Images/Phase3/run-deploy-on-docker-using-ansible-job.jpg)
+
+29. Browser on the ansible-server
+
+    ![browse-on-the-ansible-server!](Images/Phase3/browse-on-the-ansible-server.jpg)
