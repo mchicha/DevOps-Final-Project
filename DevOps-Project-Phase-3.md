@@ -380,3 +380,16 @@
         . Build Triggers: checked Poll SCM(The job will executed automatically)
         . Schedule: * * * * *(To execute the job each minute)
     ![build-triggers!](Images/Phase3/build-triggers.jpg)
+
+    Post Steps
+        
+        . Remote directory: .
+        . Exec command:
+        ansible-playbook -i /home/ansadmin/hosts ansible-docker-image.yml;
+    ![post-steps!](Images/Phase3/post-steps.jpg)
+
+27. Change the index.jsp file
+
+        . Add the line: <h1 style="color: blue;"> Version: 1.0 </h1>
+    ![change-index-jsp!](Images/Phase3/change-index-jsp.jpg)
+    
