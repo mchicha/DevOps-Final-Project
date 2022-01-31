@@ -60,14 +60,15 @@
         . docker images
     ![check-containers-and-images-existed-again!](Images/Phase4/check-containers-and-images-existed-again.jpg)
 
-7. Now we want to push the image to the docker hub account and we need to tag our image with the prefix of our account
+7. Now we want to push the image to the docker hub account and we need to tag our image with the prefix of our account.
+    
     Tagging an image is very important otherwise the docker hub will not understand from which particaular account, the particular image has to move.
     So we will now tag the image
         . docker tag tomcat-server-v8 mordehaic/tomcat-server-v8
         . docker images
     ![docker-tag!](Images/Phase4/docker-tag.jpg)
 
-    Now we have another image and this a the base image on which we have a customized image
+    Now we have another image and this the base image on which we have a customized image
 
 8. Now, i will push this base image to the docker hub
         
@@ -120,7 +121,7 @@
         . docker pull mordehaic/tomcat-server-v8
     ![pull-tag-image-from-docker-hub!](Images/Phase4/pull-tag-image-from-docker-hub.jpg)
 
-17. On the docker-server, switch to the ansadmin user because we will do all with this user
+17. On the docker-server, switch to the ansadmin user because we will do all with this user.
 
         . su - ansadmin
     ![su-ansadmin-on-docker-server!](Images/Phase4/su-ansadmin-on-docker-server.jpg)
@@ -139,7 +140,7 @@
         . docker images
     ![pull-image-on-docker-server!](Images/Phase4/pull-image-on-docker-server.jpg)
 
-    So we succeeded to push the image to the docker hub and pull it to the both server: ansible-aerver and docker-server
+    So we succeeded to push the image to the docker hub and pull it to the both server: ansible-server and docker-server
 
 20. Create a new ansible playbook: "ansible-dockerhub-image.yml" to create an image and push onto the docker hub
     
@@ -203,22 +204,22 @@
 
         tasks:
         - name: Stop container
-            command: docker stop tomcat-server-ctr
-            ignore_errors: yes
+          command: docker stop tomcat-server-ctr
+          ignore_errors: yes
 
         - name: Remove container
-            command: docker rm tomcat-server-ctr
-            ignore_errors: yes
+          command: docker rm tomcat-server-ctr
+          ignore_errors: yes
 
         - name: Remove docker image
-            command: docker rmi mordehaic/tomcat-server-v8
-            ignore_errors: yes
+          command: docker rmi mordehaic/tomcat-server-v8
+          ignore_errors: yes
 
         - name: Pulling image from dockerhub
-            command: docker pull mordehaic/tomcat-server-v8:latest
+          command: docker pull mordehaic/tomcat-server-v8:latest
 
         - name: Building docker container from from the docker image pulled from dockerhub
-            command: docker run -d --name tomcat-server-ctr -p 8080:8080 mordehaic/tomcat-server-v8
+          command: docker run -d --name tomcat-server-ctr -p 8080:8080 mordehaic/tomcat-server-v8
 
 26. Run with ansible-playbook the "ansible-container-deployment.yml" file
 
@@ -235,7 +236,7 @@
 
 28. We have to add the private ip of the docker-server on the "hosts" file to create the container on the docker-server
 
-        The private IP of the docker-server is: 172.31.7.60
+    The private IP of the docker-server is: 172.31.7.60
     ![add-docker-server-private-ip-to-hosts!](Images/Phase4/add-docker-server-private-ip-to-hosts.jpg)
 
 29. After we add the docker-server private IP in the hosts file,
@@ -245,6 +246,31 @@
     ![run-ansible-palybook-ansible-dockerhub-image-to-docker-server!](Images/Phase4/run-ansible-palybook-ansible-dockerhub-image-to-docker-server.jpg)
 
 30. Running with ansible-playbook the "ansible-container-deployment.yml" file, to create the    container on the docker-server
+    In order that command ansible-playbook with the "ansible-container-deployment.yml" file will success, we have to put the flag of the attribute become to false.
+        
+        ---
+        - hosts: all
+        become: false
+
+        tasks:
+        - name: Stop container
+          command: docker stop tomcat-server-ctr
+          ignore_errors: yes
+
+        - name: Remove container
+          command: docker rm tomcat-server-ctr
+          ignore_errors: yes
+
+        - name: Remove docker image
+          command: docker rmi mordehaic/tomcat-server-v8
+          ignore_errors: yes
+
+        - name: Pulling image from dockerhub
+          command: docker pull mordehaic/tomcat-server-v8:latest
+
+        - name: Building docker container from from the docker image pulled from dockerhub
+          command: docker run -d --name tomcat-server-ctr -p 8080:8080 mordehaic/tomcat-server-v8
+
 
         . ansible-playbook -i hosts ansible-container-deployment.yml --limit 172.31.7.60
     ![run-ansible-palybook-ansible-container-deployment-to-docker-server!](Images/Phase4/run-ansible-palybook-ansible-container-deployment-to-docker-server.jpg)
@@ -258,7 +284,7 @@
 32. Browser on the docker-server
     ![browse-on-docker-server!](Images/Phase4/browse-on-docker-server.jpg)
 
-33. Creation a new job on Jenkins: deploy-container-on-docker-server-using-ansible
+33. Create a new job on Jenkins: deploy-container-on-docker-server-using-ansible
     
     to do all the things automatically:  
     ### Part: Source code Management
@@ -298,11 +324,21 @@
         <h1 style="color: blue;"> Running on Ansible Server to create a containeron Docker Server</h1>
     ![change-index-jsp!](Images/Phase4/change-index-jsp.jpg)
 
-35. Running the "deploy-container-on-docker-server-using-ansible" job
+35. Remove all docker containers, docker images on the docker-server
+    Remove also all docker images on the ansible-server
+    ![docker-images-and-docker-containers-on-docker-server!](Images/Phase4/docker-images-and-docker-containers-on-docker-server.jpg)
+    ![docker-images-and-docker-containers-on-ansible-server!](Images/Phase4/docker-images-and-docker-containers-on-ansible-server.jpg)
+
+36. Running the "deploy-container-on-docker-server-using-ansible" job
     
     The job successed
     ![console-ouput!](Images/Phase4/console-ouput.jpg)
 
-36. Browser on the docker-server
+37. Browser on the docker-server
     ![browse-on-docker-server-second!](Images/Phase4/browse-on-docker-server-second.jpg)
 
+38. Change the index.jsp file a new time
+        
+        . Change the line: 
+        <h1 style="color: blue;"> Version: 1.3 </h1>
+    ![change-index-jsp!](Images/Phase4/change-index-jsp.jpg)
