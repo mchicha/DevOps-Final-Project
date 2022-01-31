@@ -334,6 +334,9 @@
     The job successed
     ![console-ouput!](Images/Phase4/console-ouput.jpg)
 
+    Browse on docker hub if the image updated
+    ![image-updated-on-docker-hub!](Images/Phase4/image-updated-on-docker-hub.jpg)
+
 37. Browser on the docker-server
     ![browse-on-docker-server-second!](Images/Phase4/browse-on-docker-server-second.jpg)
 
@@ -342,3 +345,8 @@
         . Change the line: 
         <h1 style="color: blue;"> Version: 1.3 </h1>
     ![change-index-jsp!](Images/Phase4/change-index-jsp.jpg)
+
+39. Check on the browser of the docker-server if the webapp changed
+
+    Browser on the docker-server
+    ![browse-on-docker-server-third!](Images/Phase4/browse-on-docker-server-third.jpg)     
