@@ -296,8 +296,13 @@
         <h1 style="color: blue;"> Version: 1.1 </h1>
         . Add the line
         <h1 style="color: blue;"> Running on Ansible Server to create a containeron Docker Server</h1>
-    ![change-index-jsp-second!](Images/Phase4/change-index-jsp-second.jpg)
+    ![change-index-jsp!](Images/Phase4/change-index-jsp.jpg)
+
+35. Running the "deploy-container-on-docker-server-using-ansible" job
     
+    The job successed
+    ![console-ouput!](Images/Phase4/console-ouput.jpg)
 
-
+36. Browser on the docker-server
+    ![browse-on-docker-server-second!](Images/Phase4/browse-on-docker-server-second.jpg)
 
