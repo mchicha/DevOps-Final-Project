@@ -238,4 +238,55 @@
         The private IP of the docker-server is: 172.31.7.60
     ![add-docker-server-private-ip-to-hosts!](Images/Phase4/add-docker-server-private-ip-to-hosts.jpg)
 
-29.     
+29. After we add the docker-server private IP in the hosts file,
+    Running with ansible-playbook the "ansible-dockerhub-image.yml" file, will pull the image from the docker hub to the docker-server
+
+        . ansible-playbook -i hosts ansible-dockerhub-image.yml --limit 172.31.7.60
+    ![run-ansible-palybook-ansible-dockerhub-image-to-docker-server!](Images/Phase4/run-ansible-palybook-ansible-dockerhub-image-to-docker-server.jpg)
+
+30. Running with ansible-playbook the "ansible-container-deployment.yml" file, to create the    container on the docker-server
+
+        . ansible-playbook -i hosts ansible-container-deployment.yml --limit 172.31.7.60
+    ![run-ansible-palybook-ansible-container-deployment-to-docker-server!](Images/Phase4/run-ansible-palybook-ansible-container-deployment-to-docker-server.jpg)
+
+31. Let's check, if the image and the container are present on the docker-server
+
+        . docker images
+        . docker ps
+    ![image-and-container-present-on-docker-server!](Images/Phase4/image-and-container-present-on-docker-server.jpg)
+
+32. Browser on the docker-server
+    ![browse-on-docker-server!](Images/Phase4/browse-on-docker-server.jpg)
+
+33. Creation a new job on Jenkins to do all the things automatically:  deploy-container-on-docker-server-using-ansible
+    ### Part: Source code Management
+        . Repository URL: https://github.com/mchicha/DevOps-Final-Project.git
+        . Branch Specifier (blank for 'any'): */phase-4-ansible-deploy-to-dockerhub
+    ![source-code-management!](Images/Phase4/source-code-management.jpg)
+
+    ### Build Triggers
+        . Build Triggers: checked Poll SCM(The job will executed automatically)
+        . Schedule: * * * * *(To execute the job each minute)
+     ![build-trigger!](Images/Phase4/build-trigger.jpg)
+    
+    ### Part: Build
+        . Root POM: pom.xml
+        . Goals and options: clean install package
+
+    ![pre-steps!](Images/Phase4/pre-steps.jpg)
+
+    ### Post build step
+    
+        . Click on Add post build step
+        . Select: Send files or execute commands over SSH
+        . Set for Name: ansible-server
+        . Set for Source files: webapp/target/*.war
+        . Set for Remove prefix: webapp/target
+        . Set for Remote directory: .
+        . Exec command: 
+        ansible-playbook -i /home/ansadmin/hosts ansible-dockerhub-image.yml --limit localhost;
+        ansible-playbook -i /home/ansadmin/hosts ansible-container-deployment.yml --limit 172.31.7.60
+    ![post-steps!](Images/Phase4/post-steps.jpg)
+
+
+
