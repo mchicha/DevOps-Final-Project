@@ -258,7 +258,9 @@
 32. Browser on the docker-server
     ![browse-on-docker-server!](Images/Phase4/browse-on-docker-server.jpg)
 
-33. Creation a new job on Jenkins to do all the things automatically:  deploy-container-on-docker-server-using-ansible
+33. Creation a new job on Jenkins: deploy-container-on-docker-server-using-ansible
+    
+    to do all the things automatically:  
     ### Part: Source code Management
         . Repository URL: https://github.com/mchicha/DevOps-Final-Project.git
         . Branch Specifier (blank for 'any'): */phase-4-ansible-deploy-to-dockerhub
@@ -275,7 +277,7 @@
 
     ![pre-steps!](Images/Phase4/pre-steps.jpg)
 
-    ### Post build step
+    ### Post Steps
     
         . Click on Add post build step
         . Select: Send files or execute commands over SSH
@@ -287,6 +289,15 @@
         ansible-playbook -i /home/ansadmin/hosts ansible-dockerhub-image.yml --limit localhost;
         ansible-playbook -i /home/ansadmin/hosts ansible-container-deployment.yml --limit 172.31.7.60
     ![post-steps!](Images/Phase4/post-steps.jpg)
+
+34. Change the index.jsp file
+        
+        . Change the line: 
+        <h1 style="color: blue;"> Version: 1.1 </h1>
+        . Add the line
+        <h1 style="color: blue;"> Running on Ansible Server to create a containeron Docker Server</h1>
+    ![change-index-jsp-second!](Images/Phase4/change-index-jsp-second.jpg)
+    
 
 
 
