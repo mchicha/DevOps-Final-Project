@@ -1,4 +1,3 @@
 <h1> Hello, Welcome to DevOps Technologies !!! </h1>
-<img src="project-phase-4.jpg">
-<h1 style="color: blue;"> Version: 1.3 </h1>
-<h1 style="color: blue;"> Running on Ansible Server to create a containeron Docker Server</h1>
+<img src="project-phase-5.jpg">
+<h1 style="color: blue;"> Version: 5.0 </h1>
