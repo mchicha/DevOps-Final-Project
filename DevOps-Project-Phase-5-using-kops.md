@@ -4,7 +4,7 @@
 
 # A - Kubernetes (K8s) Cluster installation on AWS using Kops
 
- ### 1. Launch an EC2 instance k8s-manager-server
+ ### 1. Launch an EC2 instance k8s-management-server
    Uses Ubuntu Server 20.04 LTS AMI (64-bit Arm)
 
 ![ubuntu-server-20-04-lts-ami!](Images/Phase5/ubuntu-server-20-04-lts-ami.jpg)
@@ -39,8 +39,7 @@
     . curl https://s3.amazonaws.com/aws-cli/awscli-bundle.zip -o awscli-bundle.zip
     . ls
    ![download-awscli-bundle!](Images/Phase5/download-awscli-bundle.jpg)
-    
-    . apt install unzip python -y
+
     . unzip awscli-bundle.zip
     . ls
    ![unzip-awscli-bundle](Images/Phase5/unzip-awscli-bundle.jpg)
@@ -66,7 +65,7 @@
    ![chmod+x-kubectl!](Images/Phase5/chmod+x-kubectl.jpg)
 
     . sudo mv ./kubectl /usr/local/bin/kubectl
-    . ls -l /usr/local/bin/kubectl
+    . ll /usr/local/bin/kubectl
     . kubectl version
    ![kubectl-version!](Images/Phase5/kubectl-version.jpg)
 
@@ -86,7 +85,10 @@
 
       . sudo mv kops-linux-amd64 /usr/local/bin/kops
       . ls -l /usr/local/bin/kops
+      . kops version
    ![kops-version!](Images/Phase5/kops-version.jpg)
+   It is important that the version of kubectl(here v1.22.3) is the same as the version of kops(v1.22.3)
+   
 
 ### 6. Create an IAM user/role with Route53, EC2, IAM and S3 full access
 
@@ -151,7 +153,7 @@
 
 
 ### 7. Create a Route53 private hosted zone(you can create Public hosted zone if you have a domain)
-    Routeh53 --> DNS management 
+    Route53 --> DNS management 
     
     Click Create hosted zone button
 
@@ -170,7 +172,10 @@
 ### 8. Create S3 Bucket
 
     Create a bucket named "demo.k8s.mordehaic.net" running the next command:
-        . aws s3 us-west-1 s3://demo.k8s.mordehaic.net
+        . aws s3 mb s3://demo.k8s.mordehaic.net
+   ![create-bucket_using_awscli!](Images/Phase5/create-bucket_using_awscli.jpg)
+
+   View the Bucket created via the aws console
    ![create-bucket!](Images/Phase5/create-bucket.jpg)
 
    ### Check if our role is working by running the next command:
@@ -181,7 +186,6 @@
    ### demo.k8s.mordehaic.net
 
    We can access S3. This is the bucket we created
-
 
 ### 9. Expose environment variable:
     Run the next command on the terminal:
